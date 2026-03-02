@@ -62,7 +62,7 @@ https://any.digital/ &nbsp;
 
 <big>Repository: https://github.com/anydigital/sveleven</big>
 
-Found it useful? Donate a ~~dollar~~ star: [![](https://img.shields.io/github/stars/anydigital/sveleven)](https://github.com/anydigital/sveleven)
+Found it useful? Give a [![](https://img.shields.io/github/stars/anydigital/sveleven?label=Star)](https://github.com/anydigital/sveleven)
 
 Featured in:
 
