@@ -2,4 +2,4 @@ _site/
 node_modules/
 .DS_Store
 .vscode/
-package-lock.json
+_public/styles.css

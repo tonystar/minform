@@ -1,7 +1,7 @@
 import fs from "fs";
 /* Plugins */
 import { RenderPlugin } from "@11ty/eleventy";
-import eleventyBricksPlugin from "@anydigital/eleventy-bricks";
+import eleventyBladesPlugin from "@anydigital/eleventy-blades";
 /* Dynamic plugins */
 let eleventyNavigationPlugin;
 try {
@@ -56,7 +56,7 @@ export default function (eleventyConfig) {
   /* Plugins */
   eleventyConfig.addPlugin(RenderPlugin);
   if (eleventyNavigationPlugin) eleventyConfig.addPlugin(eleventyNavigationPlugin);
-  eleventyConfig.addPlugin(eleventyBricksPlugin, {
+  eleventyConfig.addPlugin(eleventyBladesPlugin, {
     mdAutoNl2br: true,
     mdAutoRawTags: false,
     autoLinkFavicons: true,
@@ -137,7 +137,6 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("addformurl", function (contact, formurl) {
-    console.log(JSON.stringify(formurl));
     let urlpath = formurl.formpath;
     if (formurl.corsprod == "true" || formurl.prod == "false" || !formurl.prod) urlpath = formurl.corsurl + urlpath;
     return { ...contact, ...{ urlpath: urlpath } };

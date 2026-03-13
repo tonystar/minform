@@ -15,12 +15,13 @@ eleventyNavigation:
 
 - The symlink from `index.md` to `../README.md` is removed.
 - The symlink of `eleventy.config.js` is removed.
+- It is not sufficient to remove the `_includes/bricks symlink` and copy over the bricks directory. It should be left and a parallel directory used, such as `_includes_minform` with the bricks directory copied here. Symlink within `site-1` to `../includes` needs to be changed, as shown.
 - If using `@anydigital/eleventy-bricks` then `mdAutoRawTags` must be set to false. Instead use `raw` with `endraw` tags as shown in example markdown.
 - Various filters and shortcodes are added
 
-'Sveleven' has since been rebranded to 'Build Awesome Start'
+'Sveleven' has since been rebranded to 'Build Awesome Start' and `bricks` is now `blades`.
 
-### Selected file diffs
+### Initial selected file diffs
 
 ```
 {% raw %}
