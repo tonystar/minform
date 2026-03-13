@@ -11,7 +11,7 @@ Minform is a public website template using [11ty](https://11ty.dev) static websi
 
 Minform is open source with a permissive license. 
 
-Minform is a public web template built on [Sveleven](https://github.com/anydigital/sveleven) with the following additions:
+Minform is a public web template built on  [Build Awesome Starter](https://github.com/anydigital/build-awesome-starter) version [v0.8.1](https://github.com/anydigital/build-awesome-starter/releases/tag/v0.8.1) with the following additions:
 
 ## Added
 
