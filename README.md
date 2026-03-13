@@ -63,7 +63,7 @@ For localhost development it is common to set `corsurl`. However the cors server
 
 The two approaches that can be used for building forms with Minform are:
 
-- A simplified abstraction that is easy for beginners to follow. This approach requires reused variables to be kept clean by resetting after use. Shown `contact.md`
+- A simplified abstraction that is easy for beginners to follow. This approach requires reused variables to be kept clean by resetting after use. Shown in `contact.md`
 
 - An example that shows more complex abstraction with convenient potential for more abstraction. This approach dramatically reduces number of variable names that need to be reset after use, by using rendering as soon as convenient. Shown in `contact2.md`.
 
@@ -76,6 +76,14 @@ For the second more abstract approach, these values can be overridden in frontma
 
 There is no need to use a traditional script path showing an apparent directory and apparent script file for `formpath`. This naming style is used in the example for compatibility with many usage examples that expect a CGI specification, which is increasingly uncommon, not necessary and not recommended.
 
-Examples should be provided of various backend server approaches, including scipt CGI, Node Express, Node framework, PHP, Python, Perl PSGI direct, Perl PSGI framework, Perl CGI, FastCGI. Also, examples of configuration for Nginx should be provided for both FastCGI and reverse proxy.
+Examples should be provided of various backend server approaches, including scipt CGI, Node Express, various Node frameworks, PHP, Python, Perl PSGI direct, Perl PSGI framework, Perl CGI, FastCGI. Also, examples of configuration for Nginx should be provided for both FastCGI and reverse proxy.
 
-For example, the Perl PSGI specification is flexible enough to allow an app to appear to be a CGI app when it is not (using a reverse proxied persistent PSGI process) or to actually work as a CGI script even though when it is written as a PSGI persistent app. In fact, reverse proxy solutions are now so common it is now common that if a traditional CGI approach is used then FastCGI, a persistent non CGI process, is itself used to launch non persistent CGI scripts, such as for Nginx which cannot launch CGI scripts.
+For example, the Perl PSGI specification is flexible enough to allow an app to appear to be a CGI app when it is not, using traditional CGI, using FastCGI as an intermediary or using reverse proxy to a persistent PSGI process. Hence a PSGI app can work work as a CGI script even though when it is written as a PSGI persistent app.
+
+While Nginx which cannot launch CGI scripts, Nginx can interface to persistent processes using to a pool of FastCGI processes. A FastCGI process can itself launch self terminating CGI scripts.
+
+### A note on back end server handling differences:
+
+- CGI: A separate process is launched for each web request with communication by standard input/output/error and with process start up environment variables injected by web server. Not CPU efficient. Does not consumes memory when not in use.
+- FastCGI: A persistent process is launched with communication by network, socket or named pipes. What would have been CGI environment variables are now passed though IPC agreed variables. A common approach for PHP with Nginx. CPU efficient. Consumes memory when not in use.
+- Reverse Proxy: a persistent process with communication by network or socket without extra environment variables after launch or additional IPC protocols. Additional variables passed through as injected http headers. A common approach for docker and other containers, and for node servers, to avoid directly facing public Internet.
