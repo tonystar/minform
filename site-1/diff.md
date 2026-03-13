@@ -8,19 +8,19 @@ eleventyNavigation:
 ---
 
 
-## git diff from Svelenty to help adapt form, navbar and css additions to using another template
+## git diff from 'Build Awesome Start' to help adapt form, navbar and css additions to using another template
 
 
 ### Specific Changes
-
 
 - The symlink from `index.md` to `../README.md` is removed.
 - The symlink of `eleventy.config.js` is removed.
 - If using `@anydigital/eleventy-bricks` then `mdAutoRawTags` must be set to false. Instead use `raw` with `endraw` tags as shown in example markdown.
 - Various filters and shortcodes are added
 
+'Sveleven' has since been rebranded to 'Build Awesome Start'
 
-Selected file diffs
+### Selected file diffs
 
 ```
 {% raw %}
