@@ -13,7 +13,7 @@
     endif
   endif
   if urlpath == blank
-    echo "MAIL POST URL IS EMPTY! UNLIKLEY THIS WILL WORK"
+    echo "MAIL POST URL IS EMPTY! THIS WILL WORK WITH STATIC SITES!"
   endif
 -%}
 {% if required contains "email" %}{% assign email_required = "required" %}{% assign email = email | default: "Your Email" %}{% endif %}
