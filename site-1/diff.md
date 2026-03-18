@@ -1,5 +1,4 @@
 ---
-layout: default-pico.njk
 eleventyNavigation:
   key: diff
   title: Diff
@@ -20,13 +19,12 @@ eleventyNavigation:
 - If using `@anydigital/eleventy-bricks` then `mdAutoRawTags` must be set to false. Instead use `raw` with `endraw` tags as shown in example markdown.
 - Various filters and shortcodes are added
 
-'Sveleven' has since been rebranded to 'Build Awesome Start' and `bricks` is now `blades`.
+'Sveleven' has since been re branded to 'Build Awesome Start' and `bricks` is now `blades`.
 
 ### Initial selected file diffs
 
-```
+```diff
 {% raw %}
-
 
 diff --git a/LICENSE b/LICENSE
 index 5f06ec4..f0eef2d 100644

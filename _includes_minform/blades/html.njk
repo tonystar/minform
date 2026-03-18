@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="{{ site.lang | d('en') }}">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
     {% if not site.prod %}<meta name="htmx-config" content='{"selfRequestsOnly": false}'>{% endif %}
@@ -27,13 +27,13 @@
 
     {{ content_for_header }}
     {% include 'blades/gtm.njk' %}
-  </head>
+</head>
 
-  <body>
-    {% set for_body = true %}{% include 'blades/gtm.njk' %}
-    {% set nav_pages = collections.all | eleventyNavigation | dataNavigation %}
-    {% renderFile '_includes_minform/blades/nav.liquid', nav_pages  %}
-    {% block body %}
-    {% endblock %}
+<body>
+    {%- set for_body = true %}{% include 'blades/gtm.njk' %}
+    {%- set nav_pages = collections.all | eleventyNavigation | dataNavigation %}
+    {%- renderFile '_includes_minform/blades/nav.liquid', nav_pages  %}
+    {%- block body %}
+    {%- endblock %}
   </body>
 </html>

@@ -20,19 +20,19 @@
 {% if required contains "name" %}{% assign name_required = "required" %}{% assign name = name | default: "Your Name" %}{% endif %}
 {% if required contains "message" %}{% assign message_required = "required" %}{% assign message = message | default: "Your Message" %}{% endif %}
 {% if required contains "agreed" %}{% assign agreed_required = "required" %}{% assign agreed = agreed | default: "Agree with privacy policy?" %}{% endif %}
-<form class="pico" hx-target="#{{ target }}" hx-swap="afterbegin" hx-post="{{ urlpath }}">
+<form hx-target="#{{ target }}" hx-swap="afterbegin" hx-post="{{ urlpath }}">
 <div class="contact-container">
   <input type="hidden" name="required" value="{{ required }}" />
   <input type="hidden" name="subject" value="{{ title }}" />
   <input type="hidden" name="recipient" value="{{ recipient }}" />
-  <div class="hidden"><label>Botcheck: <input name="botcheck" /></label></div>
-  <div class="hidden"><label>Bottext: <input name="bottext" /></label></div>
-  {% if email %}<label>{{ email }}: <input type="email" name="email" {{ email_required }}></label>{%- endif %}
-  {% if name %}<label>{{ name }}: <input type="text" name="name" {{ name_required }}></label>{% endif %}
-  {% if agreed %}<label>{{ agreed }}: <input type="checkbox" name="agreed" {{ agreed_required }}></label>{% endif %}
+  <div hidden><label>Botcheck: <input name="botcheck" /></label></div>
+  <div hidden><label>Bottext: <input name="bottext" /></label></div>
+  {% if email %}<label>{{ email }}: <input type="email" name="email" {{ email_required }} /></label>{%- endif %}
+  {% if name %}<label>{{ name }}: <input type="text" name="name" {{ name_required }} /></label>{% endif %}
+  {% if agreed %}<label>{{ agreed }}: <input type="checkbox" name="agreed" {{ agreed_required }} /></label>{% endif %}
 </div>
   {% if message %}<label>{{ message }}: <textarea name="message" {{ message_required }}></textarea></label>{% endif %}
-<button>{{ title }}</button>
+<input type="submit" value="{{ title }}" />
 </form>
 {% if target == "internalResponse" %}<div id="internalResponse"></div>{% endif %}
 {%- liquid

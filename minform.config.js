@@ -1,14 +1,18 @@
 import fs from "fs";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 
-export default function minformConfig(eleventyConfig) {
+/**
+ * Additional eleventy configuration
+ * @param {import('@11ty/eleventy').UserConfig} eleventyConfig
+ */
+export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyAutoCacheBuster);
 
   eleventyConfig.addFilter("dataNavigation", function (nav) {
-    const url = this.page.url;
     return {
+      title: this.ctx.site.title,
       nav_pages: nav,
-      current_url: url,
+      current_url: this.page.url,
     };
   });
 

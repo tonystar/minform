@@ -12,15 +12,16 @@ scripts:
   - https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js
 
 footer: |-
-  This is a base template with source at <a href="https://github.com/johnheenan/minform" target="_blank">Minform Template</a>
+  This is a base template with source at <a href="https://github.com/johnheenan/minform" target="_blank">Minform Template</a>.
+  This footer can span multiple lines in `site-1/_data/site.yml` but can display as one line or more across full width. Markdown can be included.
 
 #gtm_id: YOUR_GTM_ID # leave empty or as comment if not using
 gtm_id:
 
-#corsprod: set true to uses cors in production
+#corsprod: set true to use cors in production
 corsprod: false
 
 #corsurl: set to server url if using cors, otherwise leave empty or as comment
-corsurl: https://hostfurl.com.au
+corsurl: https://example.com
 
 formpath: /cgi-bin/mailform.cgi
